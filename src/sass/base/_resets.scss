@@ -1,3 +1,4 @@
+@import '../abstract/variables';
 *,
 *::after,
 *::before {
@@ -12,11 +13,11 @@ html {
 
 body {
 	box-sizing: border-box;
-	padding: 3rem;
 }
 
 li {
 	list-style: none;
+	text-transform: uppercase;
 }
 
 a {	
@@ -27,4 +28,23 @@ button {
 	background: none;
 	border: none;
 	outline: none;
+}
+
+input[type="submit"] {
+	cursor: pointer;
+	border: none;
+	border-radius: 0.5rem;
+	color: $color-white;
+	text-transform: uppercase;
+	padding: 0.8rem;
+}
+
+input[type="text"],
+input[type="password"] {
+	border: none;
+	padding: 0.8rem;
+	outline: none;
+	font-size:var(--default-font-size);
+	color: $color-grey-dark-3;
+	transition: all .2s;
 }

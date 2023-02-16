@@ -5,3 +5,11 @@
 /* Base */
 @import './sass/base/base';
 @import './sass/base/resets';
+
+/* Pages */
+
+@import './sass/pages/users/loginPage';
+
+/* Layout */
+@import './sass/layout/header';
+@import './sass/layout/sidebar';

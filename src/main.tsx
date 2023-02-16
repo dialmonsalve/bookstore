@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { CrmApp } from './BookstoreApp'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router/RouterProvider'
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <CrmApp />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )

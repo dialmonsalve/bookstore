@@ -1,8 +1,13 @@
 import './App.scss'
-import { LoginPage } from './users/pages/LoginPage'
+import { Layout } from './users/layout/Layout'
 
-export const CrmApp = () => {
+export const BookstoreApp = () => {
+
+	
+
 	return (
-		<LoginPage/>
+
+		<Layout/>
+
 	)
 }
