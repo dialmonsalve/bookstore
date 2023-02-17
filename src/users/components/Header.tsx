@@ -5,7 +5,7 @@ export const Header = () => {
 			<img src="/src/assets/logo/logo.svg" alt="" className="logo"/>
 
 			<form action="#" className="search">
-						<input type="text" className="search__input" placeholder="Search hotels"/>
+						<input type="text" className="search__input" placeholder="Search"/>
 						<button className="search__button">
 								<img src="/src/assets/magnifying-glass.svg"/>
 					</button>

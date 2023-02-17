@@ -1,28 +1,23 @@
+import { NotPermission } from "../../not-found"
 import { Routes } from "../interfaces/routeAdmin"
-import { UserPage } from "../pages/UserPage"
-import { Panel } from "../views/panel-control/Panel"
+import { UserPage, EditUser, NewUserPage } from "../views/users"
 
 const isAdmin = true
 
-export const routeAdmin:Routes[] = [
+export const routeAdmin: Routes[] =  [
+	// {
+		index:true,
+		element: isAdmin ? <UserPage /> : <NotPermission />,
+	},
 	{
-		path: '/bookstore-app/control-panel',
-		element: isAdmin ? <Panel/> : <h1>No  es admin</h1>,
-		children:[
-			{
-				path:'/bookstore-app/control-panel/users',
-				element:<UserPage/>,
-				children:[
-					{
-						path:'/bookstore-app/control-panel/users/add',
-						element:<h1>Add</h1>
-					},
-					{
-						path:'/bookstore-app/control-panel/users/update',
-						element:<h1>Update</h1>
-					}
-				]
-			},	
-		]
+		path: '/bookstore-app/control-panel/users/add',
+		element: <NewUserPage />,
+	},	
+	{
+		path: '/bookstore-app/control-panel/users/edit',
+		element: <EditUser />,
+	},
+	{
+		path: '/bookstore-app/control-panel/users/delete'
 	}
 ]
