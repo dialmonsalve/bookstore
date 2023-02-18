@@ -3,43 +3,55 @@ import { Link } from "react-router-dom"
 export const Sidebar = () => {
 	return (
 
-			<div className="content" >
+		<>
+	
+
+		<div className="sidebar" >
+
+			<input type="checkbox" className="sidebar__checkbox" id="side-toggle" />
+			<label htmlFor="side-toggle" className="sidebar__button">
+				<span className="sidebar__icon-menu" >&nbsp;</span>
+			</label>
+
+			<div className="sidebar__app"></div>
+
+			<div className="sidebar__side" >
 
 				<div className="sidebar-logo">
-					<img className="sidebar-logo__logo"  src="/src/assets/logo/logo.svg" alt="logo"/>
+					<img className="sidebar-logo__logo" src="/src/assets/logo/logo.svg" alt="logo" />
 				</div>
 
-				<nav  className="sidebar">
-					
-					<ul className="side-nav">
-						<li className="side-nav__item" >
-							<Link className="side-nav__link" to="/bookstore-app">
-								<img className="side-nav__icon" src="/src/assets/sidebar/home.svg" alt="home" />
-								<span>Home</span></Link>
+				<nav className="sidebar__nav">
+
+					<ul className="sidebar__list">
+						<li className="sidebar__item" >
+							<Link  className="sidebar__link" to="/bookstore-app">
+								<img className="sidebar__icon" src="/src/assets/sidebar/home.svg" alt="home" />
+								<span >Home</span></Link>
 						</li>
-						<li className="side-nav__item" >
-							<Link className="side-nav__link" to="">
-								<img className="side-nav__icon" src="/src/assets/sidebar/shopping.svg" alt="shopping" />
+						<li className="sidebar__item" >
+							<Link className="sidebar__link" to="">
+								<img className="sidebar__icon" src="/src/assets/sidebar/shopping.svg" alt="shopping" />
 								<span>Shop</span></Link>
 						</li>
 
-						<li className="side-nav__item" >
-							<a className="side-nav__link" href="#">
-							<img className="side-nav__icon" src="/src/assets/sidebar/sale.svg" alt="sales" />
+						<li className="sidebar__item" >
+							<a className="sidebar__link" href="#">
+								<img className="sidebar__icon" src="/src/assets/sidebar/sale.svg" alt="sales" />
 								<span>Sales</span></a>
 						</li>
 
-						<li className="side-nav__item" >
-							<a className="side-nav__link" href="#">
-								<img className="side-nav__icon" src="/src/assets/sidebar/truck.svg" alt="truck" />
+						<li className="sidebar__item" >
+							<a className="sidebar__link" href="#">
+								<img className="sidebar__icon" src="/src/assets/sidebar/truck.svg" alt="truck" />
 								<span>logistic</span></a>
 						</li>
-						<li className="side-nav__item" >
-							<Link className="side-nav__link" to="/bookstore-app/control-panel">
-								<img className="side-nav__icon" src="/src/assets/sidebar/control.svg" alt="panel" />
+						<li className="sidebar__item" >
+							<Link className="sidebar__link" to="/bookstore-app/control-panel">
+								<img className="sidebar__icon" src="/src/assets/sidebar/control.svg" alt="panel" />
 								<span>Control Panel</span></Link>
 						</li>
-							
+
 						{/* <li className="side-nav__item" >
 							<a className="side-nav__link" href="#">
 								<img className="side-nav__icon" src="/src/assets/sidebar/customers.svg" alt="customers" />
@@ -55,6 +67,9 @@ export const Sidebar = () => {
 				</nav>
 
 			</div>
+		</div>
+
+		</>
 
 	)
 }

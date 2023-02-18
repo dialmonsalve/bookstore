@@ -1,0 +1,20 @@
+.plus {
+	position: fixed;
+	width: 6.5rem;
+	bottom: 4%;
+	right: 4%;
+	border-radius: 50%;
+	border: 2px solid rgba(0, 128, 0, 0.632);
+	padding: 1.5rem;
+	filter: invert(25%) sepia(93%) saturate(1200%) hue-rotate(180deg) brightness(79%) contrast(119%);
+	transition: all .2s;
+
+	&:hover {
+		transform: scale(1.05) translateY(-.5rem);
+		filter: invert(40%) sepia(53%) saturate(1200%) hue-rotate(180deg) brightness(79%) contrast(119%);
+	}
+}
+
+.section-menu {
+	
+}

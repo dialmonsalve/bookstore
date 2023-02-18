@@ -5,7 +5,7 @@ import { UserPage, EditUser, NewUserPage } from "../views/users"
 const isAdmin = true
 
 export const routeAdmin: Routes[] =  [
-	// {
+	{
 		index:true,
 		element: isAdmin ? <UserPage /> : <NotPermission />,
 	},

@@ -2,8 +2,9 @@
 export const Header = () => {
 	return (
 		<header className="header">
-			<img src="/src/assets/logo/logo.svg" alt="" className="logo"/>
 
+
+			<img src="/src/assets/logo/logo.svg" alt="" className="logo"/>
 			<form action="#" className="search">
 						<input type="text" className="search__input" placeholder="Search"/>
 						<button className="search__button">

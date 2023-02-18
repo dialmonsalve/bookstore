@@ -1,56 +1,103 @@
 @import '../abstract/variables';
 
-// .app{
-// 	height: 100%;
-// 	background-color: rgba($color-black, 0.4);
-// 	width:75%;
-// 	position: absolute;
-// 	right: 0;
-// 	z-index: 1;
-// }
 
-.content {
-	transform: translateX(-110%);
-	display: flex;
-	flex-direction: column;
-	background-color:  $color-black;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	transition: all .3s;
-	width: 20%;
-}
 
 .sidebar {
-	
 
-}
-
-.sidebar-logo {
-	// background-color: $color-grey-light-2;
-
-
-	&__logo {
-		font-size: 2rem;
-		width: 25%;
-		margin: 1rem 2rem;
-		filter: invert(42%) sepia(93%) saturate(600%) hue-rotate(190deg) brightness(119%) contrast(119%)
+	&__app{
+		height: 100%;
+		background-color: rgba($color-black, 0.4);
+		width:80%;
+		position: absolute;
+		right: 0;
+		top:0;
+		z-index: 1;
+		transform: translateX(-130%);
+		transition: all .3s ease-in-out .3s;
 	}
-}
 
-// SIDE NAVIGATION
-.side-nav {
-	font-size: 1.4rem;
+	&__checkbox {
+		display: none;
+	}
 
+	&__button {
+		height: 5rem;
+		width: 5rem;
+		position: fixed;
+		top: 1rem;
+		border-radius: 50%;
+		z-index: 2;
+		box-shadow: 0 1rem 3rem rgba($color-black, .3);
+		text-align: center;
+		cursor: pointer;
+	}
+
+	&__icon-menu {
+		position: relative;
+		margin-top: 2.5rem;
+		z-index: 1;
+
+		&,
+		&::before,
+		&::after {
+			width: 3rem;
+			height: 2px;
+			background-color: $color-white;
+			display: inline-block;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			transition: all .2s;
+		}
+		&::before {top: -.8rem;}
+		&::after {top: .8rem;}
+
+	}
+
+	&__side {
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		background-color:  $color-black;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		transform: translateX(-110%);
+		top: 0;
+		transition: all .8s cubic-bezier(1, -0.55, 0.265, 1.55);
+		width: 20%;
+	}
+
+	&-logo {
+		display: flex;
+		justify-content: flex-end;
+		margin: 1rem 2rem 1rem;
+	
+		&__logo {
+			font-size: 2rem;
+			width: 30%;
+			flex-grow: 0;
+			justify-self: end;
+			filter: invert(42%) sepia(93%) saturate(600%) hue-rotate(190deg) brightness(119%) contrast(119%)
+		}
+	}
+
+	// SIDE NAVIGATION
+	&__nav {
+		font-size: 1.4rem;
+	}
 	&__item {
-			position: relative;
-			margin: 0;
-			flex: 1;
+		position: relative;
+		margin: 0;
+		flex: 1;
 
-			&:not(:last-child) {
-					margin-bottom: .5rem;
-			}
+		&:not(:last-child) {
+				margin-bottom: .5rem;
+		}
 
 	}
 
@@ -76,24 +123,68 @@
 	}
 
 	&__item:active::before {
-			background-color: rgb($color-primary-light,.8);
+			background-color: rgb($color-primary-light,.8);//!
 	}
 
 	&__link:link,
 	&__link:visited {
-			color: $color-grey-light-1;
-			padding: 1.5rem 3rem;
-			position: relative;
-			padding: 2rem;
-			display: flex;
-
+		color: $color-grey-light-1;
+		padding: 1.4rem 1.2rem;
+		position: relative;
+		display: flex;
 	}
 
 	&__icon {
-			width: 1.75rem;
-			height: 1.75rem;
-			margin-right: 2rem;
-			margin-bottom: .7rem;
-			filter: invert(42%) sepia(93%) saturate(600%) hue-rotate(100deg) brightness(119%) contrast(119%);
+		width: 1.75rem;
+		height: 1.75rem;
+		margin-right: 2rem;
+		filter: invert(42%) sepia(93%) saturate(600%) hue-rotate(100deg) brightness(119%) contrast(119%);
+	}
+
+	&__checkbox:checked ~ &__side {
+		transform: translateX(0);
+	}
+	&__checkbox:checked ~ &__app {
+		transform: translateX(0);
+	}
+
+	//ICON
+	&__icon-menu {
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			transition: all .2s;
+		}
+		&::before {top: -.8rem;}
+		&::after {top: .8rem;}
+
+	}
+
+	&__button:hover &__icon-menu:before {
+		top: -1rem;
+	}
+
+	&__button:hover &__icon-menu:after {
+		top: 1rem;
+	}
+	
+	&__checkbox:checked + &__button &__icon-menu{
+		background-color: transparent;
+		transition-delay: .2s;
+	}
+	
+	&__checkbox:checked + &__button &__icon-menu::before{
+		top: 0;
+		transform: rotate(135deg);
+		transition-delay: .2s;
+	}
+	
+	&__checkbox:checked + &__button &__icon-menu::after{
+		top: 0;
+		transform: rotate(-135deg);
+		transition-delay: .2s;
 	}
 }

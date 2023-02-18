@@ -9,7 +9,13 @@
 /* Pages */
 
 @import './sass/pages/users/loginPage';
+@import './sass/pages/users/createUser.scss';
 
 /* Layout */
 @import './sass/layout/header';
 @import './sass/layout/sidebar';
+
+@import './sass/pages/menu';
+
+/* Utilities */
+@import './sass/utilities/Typography.scss';
