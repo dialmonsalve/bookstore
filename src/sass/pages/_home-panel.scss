@@ -1,9 +1,8 @@
 .section-menu {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	padding: 10rem;
+	padding: 0 10rem;
 	grid-gap: 1.2rem;
-	// margin-right: 14rem;
 }
 .card-menu {
 	display: flex;

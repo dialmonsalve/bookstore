@@ -1,3 +1,3 @@
-export * from './EditUser';
-export * from './NewUserPage';
-export * from './UserPage';
+export * from './EditUserView';
+export * from './CreateUserView';
+export * from './UsersView';

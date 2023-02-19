@@ -1,0 +1,28 @@
+@import './variables';
+
+/* Buttons */
+@mixin btn ($color){
+	background-color: $color;
+	color: $color-white;
+	padding: .6rem 1.2rem;
+	margin: 1rem;
+	border-radius: 5px;
+	box-shadow: .2rem .2rem .7rem rgba($color-black, .6);
+	transition: all .2s;
+
+	&:hover {
+		background-color: rgba($color, 1);
+	}
+}
+
+@mixin btn-blue() {
+	@include btn($color-blue);
+}
+
+@mixin btn-green() {
+	@include btn($color-secondary-light);
+}
+
+@mixin btn-red() {
+	@include btn($color-red);
+}

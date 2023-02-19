@@ -1,0 +1,13 @@
+@import '../abstract/mixins';
+
+.btn-blue {
+	@include btn-blue();
+}
+
+.btn-green {
+	@include btn-green();
+}
+
+.btn-red {
+	@include btn-red();
+}

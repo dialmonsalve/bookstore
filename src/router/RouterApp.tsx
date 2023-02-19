@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { Layout } from '../users/layout/Layout'
 import { LoginPage } from '../users/pages/LoginPage'
-import { ControlPanel, Menu } from '../users/views/configurations'
+import { ControlPanelPage, HomePanelPage } from '../users/pages'
 import { routeAdmin } from '../users/routes/RouteAdmin'
 import { NotFound } from '../not-found/NotFound'
 
@@ -12,10 +12,10 @@ export const router = createBrowserRouter([
 
 	//!PUBLIC ROUTS
 	{
-    path: "/",
-		errorElement:<NotFound/>
+		path: "/",
+		errorElement: <NotFound />
 
-  },
+	},
 
 	//!PRIVATE ROUTS
 	{
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <Menu />,
+				element: <HomePanelPage />,
 			},
 
 			{
@@ -34,12 +34,12 @@ export const router = createBrowserRouter([
 					//!USERS ROUTS
 					{
 						index: true,
-						element: <ControlPanel />
+						element: <ControlPanelPage />
 					},
 
 					//!ADMIN ROUTS
 					{
-						path: '/bookstore-app/control-panel/users',						
+						path: '/bookstore-app/control-panel/users',
 						children: routeAdmin,
 					}
 				]

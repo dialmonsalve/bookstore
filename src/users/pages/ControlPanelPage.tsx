@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export const ControlPanel = () => {
+export const ControlPanelPage = () => {
 
 	return (
 		
@@ -39,7 +39,7 @@ export const ControlPanel = () => {
 				<article className="card-menu">
 					<Link to='/bookstore-app/control-panel/providers' className="card-menu__link" >
 						<h4>Providers</h4>
-						<img src="/src/assets/menu/customers.svg" alt="providers" className="card-menu__image" />
+						<img src="/src/assets/menu/provider.svg" alt="providers" className="card-menu__image" />
 						<p>Manage your Providers</p>
 						<p>Create, edit and more...</p>
 					</Link>

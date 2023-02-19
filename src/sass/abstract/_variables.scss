@@ -10,18 +10,9 @@
 
 	--default-font-size: 1.6rem;
 
-	// GRID
-	--grid-width: 114rem;
-	--gutter-vertical: 8rem;
-	--gutter-vertical-small: 6rem;
-	--gutter-horizontal: 6rem;
-
-	--line: 1px solid var(--color-white);
-	
+	--line: 1px solid var(--color-white);	
 }
 //Globals variables
-$color-primary-light: #2998ff;
-
 $color-secondary: #55c57a;
 $color-secondary-light: #7ed56f;
 $color-secondary-dark: #28b485;
@@ -36,7 +27,11 @@ $color-grey-dark: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
 
-$color-primary-dark: #0d3a9d;
+$color-primary-dark: #0d3b9dca;
 $color-primary-light: #2998ff;
+
+$color-blue:#063bc1b7;
+$color-red:#bb0909b4;
+
 $color-black: #000;
 $color-white: #fff;

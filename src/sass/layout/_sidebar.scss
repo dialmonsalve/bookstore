@@ -1,8 +1,4 @@
-@import '../abstract/variables';
-
-
-
-.sidebar {
+.sidebar {	
 
 	&__app{
 		height: 100%;
@@ -21,15 +17,16 @@
 	}
 
 	&__button {
-		height: 5rem;
-		width: 5rem;
-		position: fixed;
-		top: 1rem;
+		background-color: $color-primary-light;
 		border-radius: 50%;
-		z-index: 2;
 		box-shadow: 0 1rem 3rem rgba($color-black, .3);
-		text-align: center;
 		cursor: pointer;
+		height: 5rem;
+		position: absolute;
+		text-align: center;
+		top: 1rem;
+		width: 5rem;
+		z-index: 2;
 	}
 
 	&__icon-menu {
@@ -89,6 +86,7 @@
 	// SIDE NAVIGATION
 	&__nav {
 		font-size: 1.4rem;
+		
 	}
 	&__item {
 		position: relative;
@@ -132,6 +130,10 @@
 		padding: 1.4rem 1.2rem;
 		position: relative;
 		display: flex;
+
+		&.active {
+			background-color: $color-primary-light;
+		}
 	}
 
 	&__icon {

@@ -6,16 +6,22 @@
 @import './sass/base/base';
 @import './sass/base/resets';
 
-/* Pages */
+/* Components */
 
-@import './sass/pages/users/loginPage';
-@import './sass/pages/users/createUser.scss';
+@import './sass/components/button.scss';
+@import './sass/components/table.scss';
+
+/* Pages */
+@import './sass/pages/users/login-page';
+@import './sass/pages/users/users-view.scss';
+@import './sass/pages/users/create-user';
 
 /* Layout */
 @import './sass/layout/header';
 @import './sass/layout/sidebar';
 
-@import './sass/pages/menu';
-
 /* Utilities */
 @import './sass/utilities/Typography.scss';
+
+/* General */
+@import './sass/pages/home-panel';

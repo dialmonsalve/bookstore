@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom"
 
-export const EditUser = () => {
+export const EditUserView = () => {
 
 
 	return (
-		<div>EditUser</div>
+		<div>EditUserView</div>
 	)
 }

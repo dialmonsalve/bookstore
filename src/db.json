@@ -1,21 +1,121 @@
 {
-	"users" :[
+	"users": [
 		{
-			"username" : "admin",
-			"password" : "admin",
-			"role" : "0"
+			"_id":"1",
+			"dependency": "admin",
+			"Email":"correo@correo.com",
+			"lastName":"Monsalve",
+			"name": "Diego",
+			"password":"1234567",
+			"rol": "admin"
 		},
 		{
-			"username" : "user",
-			"password" : "user",
-			"role" : "1"
-		}
-	],
-
-	"roles": [
-		{"0":"superUser"}, 
-		{"1":"admin"}, 
-		{"2": "user"}, 
-		{"3": "customer"}
+			"id":"2",
+			"name": "Alejandro",
+			"lastName":"Estrada",
+			"dependency": "admin",
+			"Email":"correo1@correo.com",
+			"password":"1234567",
+			"rol":"shop"
+		},
+		{
+			"id":"3",
+			"name": "Pepe",
+			"lastName":"Doe",
+			"dependency": "admin",
+			"Email":"Pepe@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"4",
+			"name": "Luz",
+			"lastName":"hide",
+			"dependency": "shop",
+			"Email":"lulu@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"5",
+			"name": "Pie",
+			"lastName":"Thomson",
+			"dependency": "shop",
+			"Email":"pieth@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"6",
+			"name": "Glenda",
+			"lastName":"Peterson",
+			"dependency": "shop",
+			"Email":"glpt@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"7",
+			"name": "Phil",
+			"lastName":"Cartier",
+			"dependency": "sales",
+			"Email":"phcar@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"8",
+			"name": "Alex",
+			"lastName":"Moor",
+			"dependency": "sales",
+			"Email":"alemo@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"9",
+			"name": "peter",
+			"lastName":"Dusky",
+			"dependency": "sales",
+			"Email":"petdusk@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"10",
+			"name": "Tom",
+			"lastName":"Parker",
+			"dependency": "sales",
+			"Email":"tpark@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"11",
+			"name": "Bilma",
+			"lastName":"Blum",
+			"dependency": "Humanity",
+			"Email":"bilblu@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"12",
+			"name": "Banner",
+			"lastName":"Cruz",
+			"dependency":"Humanity",
+			"Email":"bncruz@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		},
+		{
+			"id":"13",
+			"name": "Bart",
+			"lastName":"Simpsons",
+			"dependency":"Humanity",
+			"Email":"tolomeo@correo.com",
+			"password":"1234567",
+			"rol":"user"
+		}	
 	]
 }
