@@ -1,16 +1,45 @@
+import { useForm } from "../../hooks/useForm"
+import {  startLogin } from "../../store/auth";
+import { useAppDispatch } from "../hooks/app";
+import { FormLogin } from "../interfaces";
+
+const user:FormLogin = {
+	username: "admin",
+	password: "1234567"
+}
 
 export const LoginPage = () => {
+
+	const { formState, username, password, onInputChange } = useForm(user);
+	const dispatch = useAppDispatch()
+
+	const onLogin = (e:React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
+		// dispatch(startLogin({username}));//!implement
+	}
+
 	return (
 		<div className="grid-form">
 
 			<h1 className="title">Login</h1>
-			<form className="form" >
+			<form className="form" onSubmit={onLogin} >
 
-				<label >user</label>
-				<input type="text" />
+				<label >username</label>
+				<input 
+					name="username"
+					value={username}
+					type="text"
+					onChange={onInputChange}
+					/>
 
 				<label>password</label>
-				<input type="password" />
+				<input 
+					name="password"
+					type="password"
+					value={password}
+					onChange={onInputChange} 
+				/>
 				
 				<input className="sub" type="submit" value="login" />
 			</form>

@@ -1,12 +1,37 @@
 import { Link } from "react-router-dom"
-import { users } from "../../../data/users/users"
+import { setActiveUser } from "../../../store/admin"
+
+import { useAppDispatch, useAppSelector } from "../../hooks/app"
 
 export const UsersView = () => {
+
+	const { users } = useAppSelector( state => state.admin )
+	const dispatch = useAppDispatch()
+
+	const onActiveUser = () => {
+
+		dispatch(setActiveUser({displayName, lastName, email, usernamem, dependency, rol}))
+
+	}
 
 	return (
 		<main>
 
-		<h1 className="heading-primary">User Page</h1>		
+
+		<h1 className="heading-primary">User Page</h1>	
+
+		<div className="nav-page">
+			<Link 
+				className="btn-green"
+				to= '/bookstore-app/control-panel'
+			>Back
+				
+			</Link>			
+
+			<Link to="/bookstore-app">
+				<img src="/src/assets/sidebar/home.svg" alt="home" className="sidebar__icon" />
+			</Link>
+		</div>
 
 		<section className="section-users">
 			<table className="table">
@@ -27,14 +52,15 @@ export const UsersView = () => {
 
 							<tr key={user.id}>
 								<td>{ user.id }</td>
-								<td>{ user.name }</td>
+								<td>{ user.displayName }</td>
 								<td>{ user.lastName }</td>
 								<td>{ user.dependency }</td>
-								<td>{ user.Email }</td>
+								<td>{ user.email }</td>
 								<td>
 									<Link 
 										className="btn-blue"
-										to='/bookstore-app/control-panel/users/edit'
+										to= {`/bookstore-app/control-panel/users/${user.id}/edit`}
+										onClick = {onActiveUser}
 									>
 										Edit
 									</Link>

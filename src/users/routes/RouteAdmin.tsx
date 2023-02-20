@@ -14,7 +14,7 @@ export const routeAdmin: Routes[] =  [
 		element: <CreateUserView />,
 	},	
 	{
-		path: '/bookstore-app/control-panel/users/edit',
+		path: '/bookstore-app/control-panel/users/:userId/edit',
 		element: <EditUserView />,
 	},
 	{

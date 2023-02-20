@@ -5,6 +5,7 @@ import { LoginPage } from '../users/pages/LoginPage'
 import { ControlPanelPage, HomePanelPage } from '../users/pages'
 import { routeAdmin } from '../users/routes/RouteAdmin'
 import { NotFound } from '../not-found/NotFound'
+import { useCheckAuth } from '../auth.ts/useCheckAuth'
 
 const isActive = 'checked'
 
