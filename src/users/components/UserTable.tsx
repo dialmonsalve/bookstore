@@ -16,7 +16,7 @@ export const UserTable = ({user}:Props) => {
 		dispatch(setClearUser())
 	}
 
-	const onDeleteUser = (e)=> {
+	const onDeleteUser = (e:React.FormEvent<HTMLInputElement>)=> {
 		e.preventDefault()
 
 		if(user.id === null) return
