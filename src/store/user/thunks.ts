@@ -1,7 +1,7 @@
 import { AnyAction, ThunkAction } from "@reduxjs/toolkit";
 import { Auth, User } from "../../users/interfaces";
 import { RootState } from "../store";
-import { savingNewUser, setSaving, setUser, setUsers, updateUser } from "./userSlice";
+import { addNewUser, deleteUserById, savingNewUser, setSaving, setUser, setUsers, updateUser } from "./userSlice";
 
 export const startLoadingUsers = (): ThunkAction<void, RootState, unknown, AnyAction> => {
 
@@ -25,6 +25,7 @@ export const startLoadingUsers = (): ThunkAction<void, RootState, unknown, AnyAc
 export const startAddNewUser = (user: User): ThunkAction<void, RootState, unknown, AnyAction> => {
 
 	return async dispatch => {
+
 		dispatch(savingNewUser)
 
 		try {
@@ -36,6 +37,8 @@ export const startAddNewUser = (user: User): ThunkAction<void, RootState, unknow
 				}
 			});
 			await resp.json()
+
+			dispatch(addNewUser)
 
 		} catch (error) {
 			console.log(error)
@@ -55,19 +58,20 @@ export const getUserById = ( id:string ): ThunkAction<void, RootState, unknown, 
 		if(typeof findUser === 'undefined') return
 		
 		if(findUser === null) {
-			const errorMessage = 'User dont exist, please try again'
+			const errorMessage = 'User don\'t exist, please try again'
 			return {
 				ok:false,
 				errorMessage
 			}
 		}
 		if(findUser.id ===  "1") {
-			const errorMessage = 'You dontt have permissions to update this user'
+			const errorMessage = 'You don\'t have permissions to update this user'
 			return {
 				ok:false,
 				errorMessage
 			}
 		}
+
 		dispatch(setUser(findUser))  
 	}
 }
@@ -97,7 +101,7 @@ export const startUpdateUser = (id:string, user:User): ThunkAction<void, RootSta
 	}
 }
 
-export const startDelitingUser =(id:string): ThunkAction<void, RootState, unknown, AnyAction> =>{
+export const startDeletingUser =(id:string): ThunkAction<void, RootState, unknown, AnyAction> =>{
 	
 	return async dispatch => {
 
@@ -107,6 +111,8 @@ export const startDelitingUser =(id:string): ThunkAction<void, RootState, unknow
 				method: 'DELETE'
 			});
 			await resp.json()
+
+			dispatch(deleteUserById(id))
 
 		} catch (error) {
 			console.log(error);

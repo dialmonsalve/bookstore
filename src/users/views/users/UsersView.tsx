@@ -1,17 +1,20 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useCheckAuth } from "../../../auth.ts/useCheckAuth";
-import { useAppDispatch, useAppSelector } from "../../hooks/app";
+import { startLoadingUsers } from "../../../store/user";
+import { UserTable } from "../../components/UserTable";
+import {  useAppDispatch, useAppSelector } from "../../hooks/app";
 
 export const UsersView = () => {
 
-	const { users } = useAppSelector( state => state.user )
-	const dispatch = useAppDispatch()
+	const { users } = useAppSelector( state => state.user );
+	const dispatch = useAppDispatch();
 
-	useCheckAuth() //!Unabled when I will have finished the auth implementention
+	useEffect(() => {		
+		dispatch(startLoadingUsers())
+}, [])
 
 	return (
 		<main>
-
 
 		<h1 className="heading-primary">User Page</h1>	
 
@@ -46,27 +49,7 @@ export const UsersView = () => {
 						users.map(user =>(
 
 							<tr key={user.id}>
-								<td>{ user.id }</td>
-								<td>{ user.displayName }</td>
-								<td>{ user.lastName }</td>
-								<td>{ user.dependency }</td>
-								<td>{ user.email }</td>
-								<td>
-									<Link 
-										className="btn-blue"
-										to= {`/bookstore-app/control-panel/users/${user.id}/edit`}
-									>
-										Edit
-									</Link>
-
-									<Link 
-										className="btn-red"
-										to='/bookstore-app/control-panel/users/edit'
-									>
-										Delete
-									</Link>
-								</td>		
-								<td>{ user.rol }</td>
+								<UserTable user={user}/>
 							</tr>
 						))
 					}

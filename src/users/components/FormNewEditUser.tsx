@@ -1,58 +1,23 @@
-import { initialState, startAddNewUser } from "../../../store/user";
+import { useState } from "react";
+import { useForm } from "../../hooks/useForm";
+import { User } from "../interfaces";
 
-import { useForm } from "../../../hooks/useForm";
-import { FormNewEditUser } from "../../components/FormNewEditUser";
-import { User } from "../../interfaces";
-import { formattingDate, generateId } from "../../../helpers";
-import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/app";
+type Props = {
+	mode:'create' | 'edit';
+	data:User,
+	onSubmit:(e: React.FormEvent<HTMLFormElement>)=>void;
+	onInputChange:(e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement>)=>void;
+}
 
-export const CreateUserView = () => {
+export const FormNewEditUser = ({ mode, data, onSubmit, onInputChange}:Props) => {
 
-	const dispatch = useAppDispatch()
-	const navigate = useNavigate()
-
-	const {
-		displayName,
-		lastName,
-		email,
-		username,
-		dependency,
-		rol,
-		onInputChange
-	} = useForm(initialState);
-	
-
-	const onCreateNewUser = (e:React.FormEvent<HTMLFormElement>) => {
-
-		e.preventDefault();
-
-		const newUser:User = {
-			createAt: formattingDate(Date.now()),
-			dependency,
-			displayName,
-			email,
-			id: generateId(),
-			isAdmin: false,
-			isNew: true,
-			lastName,
-			password: '1234',
-			photoUrl: '',
-			rol,
-			updateAt: null,
-			username,
-		}		
-
-		dispatch(startAddNewUser(newUser));
-
-		navigate('/bookstore-app/control-panel/users')
-	}
+	const [{ displayName, lastName, email, username, dependency, rol }, setForm ]= useState(data)
 
 	return (
 
 		<div className="grid-form">
-			<h1 className="title">{ 'Create a User'}</h1>
-			<form className="form" onSubmit={ onCreateNewUser }  >
+			<h1 className="title">{ mode ==='create' ? 'Create a User' : 'Edit User'}</h1>
+			<form className="form" onSubmit={ onSubmit }  >
 
 				<label >Name</label>
 				<input
@@ -111,9 +76,8 @@ export const CreateUserView = () => {
 					<option value="sales">sales</option>
 				</select>
 
-				<input className="sub" type="submit" value={'Create'} />
+				<input className="sub" type="submit" value={mode ==='create' ? 'Create' : 'Update'} />
 			</form>
 		</div>
-
 	)
 }

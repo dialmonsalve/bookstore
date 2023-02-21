@@ -16,7 +16,7 @@ const initialState: Admin = {
 }
 
 export const userSlice = createSlice({
-	name: 'admin',
+	name: 'user',
 	initialState,
 	reducers: {
 
@@ -34,7 +34,12 @@ export const userSlice = createSlice({
 		},
 
 		setUser: (state: Admin, { payload }: PayloadAction<User>) => {
-			state.active = payload
+			state.active = payload	
+		},
+
+		setClearUser :(state:Admin) =>{
+			state.active = initialState.active
+
 		},
 
 		setSaving: (state: Admin) => {
@@ -52,7 +57,8 @@ export const userSlice = createSlice({
 		},
 
 		deleteUserById: (state: Admin, { payload }: PayloadAction<string>) => {
-
+			state.active = null;
+			state.users = state.users.filter(user => user.id !== payload)
 		},
 
 	}
@@ -65,5 +71,6 @@ export const {
 	savingNewUser,
 	setUser,
 	setUsers,
+	setClearUser,
 	updateUser,
 } = userSlice.actions;

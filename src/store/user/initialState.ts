@@ -1,7 +1,6 @@
 import { User } from "../../users/interfaces";
 
 export const initialState: User = {
-	ok:false,
 	id: null,
 	displayName: '',
 	lastName: '',
@@ -13,8 +12,8 @@ export const initialState: User = {
 	isAdmin: false,
 	rol: '',
 	isNew: true,
-	errorMessage: null,
+	errorMessage: '',
 	photoUrl: null,
-	createAt:null,
+	createAt:'',
 	updateAt:null,
 }

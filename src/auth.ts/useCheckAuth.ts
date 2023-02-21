@@ -6,8 +6,5 @@ export const useCheckAuth = () => {
 
 	const dispatch = useAppDispatch()
 
-	useEffect(() => {		
-			dispatch(startLoadingUsers())
-	}, [])
 	
 }

@@ -16,6 +16,6 @@ export const routeAdmin: Routes[] =  [
 		element: <EditUserView />,
 	},
 	{
-		path: '/bookstore-app/control-panel/users/delete'
+		path: '/bookstore-app/control-panel/users/:userId/delete'
 	}
 ]
