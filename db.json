@@ -11,19 +11,19 @@
       "createAt": ""
     },
     {
+      "updateAt": "",
       "id": "2",
       "username": "aestrada",
       "displayName": "Alejandro",
       "lastName": "Estrada",
       "dependency": "administration",
       "email": "correo1@correo.com",
-      "password": "1234567",
+      "password": "12345",
       "isAdmin": false,
       "rol": "shop",
       "isNew": false,
       "photoUrl": "",
-      "createAt": "",
-      "updateAt": ""
+      "createAt": ""
     },
     {
       "id": "3",
@@ -102,6 +102,7 @@
       "updateAt": ""
     },
     {
+      "updateAt": "",
       "id": "8",
       "username": "alemoor",
       "displayName": "Alex",
@@ -113,8 +114,7 @@
       "rol": "sales",
       "isNew": false,
       "photoUrl": "",
-      "createAt": "",
-      "updateAt": ""
+      "createAt": ""
     },
     {
       "id": "9",
@@ -175,6 +175,36 @@
       "photoUrl": "",
       "createAt": "",
       "updateAt": ""
+    },
+    {
+      "id": "75kh3dhg7vrledl1m1d",
+      "createAt": "20 de febrero de 2023",
+      "dependency": "administration",
+      "displayName": "Paolo",
+      "email": "pjurado@correo.com",
+      "isAdmin": false,
+      "isNew": true,
+      "lastName": "Jurado",
+      "password": "1234",
+      "photoUrl": "",
+      "rol": "user",
+      "updateAt": null,
+      "username": "pjurado"
+    },
+    {
+      "updateAt": null,
+      "id": "8y10znqep7mledl20ev",
+      "createAt": "20 de febrero de 2023",
+      "dependency": "shop",
+      "displayName": "Pier",
+      "email": "pepuet@correo.com",
+      "isAdmin": false,
+      "isNew": true,
+      "lastName": "Pueterly",
+      "password": "1234",
+      "photoUrl": "",
+      "rol": "shop",
+      "username": "pepuet"
     }
   ]
 }

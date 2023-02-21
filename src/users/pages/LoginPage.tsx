@@ -1,5 +1,5 @@
 import { useForm } from "../../hooks/useForm"
-import {  startLogin } from "../../store/auth";
+import { startLogin } from "../../store/auth";
 import { useAppDispatch } from "../hooks/app";
 import { FormLogin } from "../interfaces";
 
@@ -13,10 +13,10 @@ export const LoginPage = () => {
 	const { formState, username, password, onInputChange } = useForm(user);
 	const dispatch = useAppDispatch()
 
-	const onLogin = (e:React.FormEvent<HTMLFormElement>) => {
+	const onLogin = async (e:React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		// dispatch(startLogin({username}));//!implement
+		dispatch(startLogin({username, password}));//!implement
 	}
 
 	return (

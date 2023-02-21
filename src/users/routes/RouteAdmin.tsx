@@ -1,13 +1,11 @@
-import { NotPermission } from "../../not-found"
 import { Routes } from "../interfaces/routeAdmin"
-import { UsersView, EditUserView, CreateUserView } from "../views/users"
-
-const isAdmin = true
+import {  EditUserView, CreateUserView } from "../views/users"
+import { IsAdmin } from "./IsAdmin"
 
 export const routeAdmin: Routes[] =  [
 	{
 		index:true,
-		element: isAdmin ? <UsersView /> : <NotPermission />,
+		element: <IsAdmin />,
 	},
 	{
 		path: '/bookstore-app/control-panel/users/add',

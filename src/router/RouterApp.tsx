@@ -5,9 +5,7 @@ import { LoginPage } from '../users/pages/LoginPage'
 import { ControlPanelPage, HomePanelPage } from '../users/pages'
 import { routeAdmin } from '../users/routes/RouteAdmin'
 import { NotFound } from '../not-found/NotFound'
-import { useCheckAuth } from '../auth.ts/useCheckAuth'
 
-const isActive = 'checked'
 
 export const router = createBrowserRouter([
 
@@ -21,7 +19,7 @@ export const router = createBrowserRouter([
 	//!PRIVATE ROUTS
 	{
 		path: '/bookstore-app',
-		element: isActive === 'checked' ? <Layout /> : <LoginPage />,
+		element: <Layout />,
 		children: [
 			{
 				index: true,

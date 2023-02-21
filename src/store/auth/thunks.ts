@@ -2,9 +2,8 @@ import { checkingCredentials, login, logout } from './authSlice';
 import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { RootState } from '../store';
-import { FormLogin } from '../../users/interfaces';
-
-
+import {  FormLogin } from '../../users/interfaces';
+import { getUserByUsernameAndPassword } from '../../data/provider';
 
 
 export const startLogin = ({username, password}: FormLogin):ThunkAction<void, RootState, unknown, AnyAction> => {
@@ -13,8 +12,12 @@ export const startLogin = ({username, password}: FormLogin):ThunkAction<void, Ro
 
 		dispatch(checkingCredentials());
 
-		const result = await  fetch(`${import.meta.env.VITE_API_URL}`);
-		const resp = await result.json()
+		const result = await getUserByUsernameAndPassword({username, password})
+
+		if(typeof result.errorMessage !== 'undefined') {
+			return dispatch(logout(result.errorMessage))
+		}
+		dispatch(login(result))
 
 	}
 

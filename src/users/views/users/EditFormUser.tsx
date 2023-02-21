@@ -1,61 +1,38 @@
-import { useNavigate} from "react-router-dom";
-
-import { initialState, startAddNewUser } from "../../../store/user";
-
-import { User } from "../../interfaces";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { formattingDate } from "../../../helpers";
 import { useForm } from "../../../hooks/useForm";
-import { useAppDispatch } from "../../hooks/app";
-import { formattingDate, generateId } from "../../../helpers";
+import { setUser, startUpdateUser } from "../../../store/user";
+import { useAppDispatch, useAppSelector } from "../../hooks/app";
+import { User } from "../../interfaces"; 
 
-export const CreateUserView = () => {
+export const EditFormUser = () => {
 
-	const {
-		displayName,
-		lastName,
-		onInputChange,
-		email,
-		username,
-		dependency,
-		rol
-	} = useForm(initialState);
-
-	const dispatch = useAppDispatch();
+	const { active:user } = useAppSelector(state => state.user);
+	const { formState, displayName, lastName, username, dependency, rol, onInputChange, id, } = useForm(user)
+	const dispatch = useAppDispatch()
 
 	const navigate = useNavigate()
 
-	const onCreateNewUser = (e:React.FormEvent<HTMLFormElement>) => {
+	useEffect(() => {
+		setUser(formState as User)
+	}, [formState])
 
-		e.preventDefault();
 
-		const newUser:User = {
-			id: generateId(),
-			createAt: formattingDate(Date.now()),
-			dependency,
-			displayName,
-			email,
-			errorMessage: undefined,
-			isAdmin: false,
-			isNew: true,
-			lastName,
-			password: '1234',
-			photoUrl: '',
-			rol,
-			updateAt: null,
-			username,
-		}
+	const onUpdateUser =(e:React.FormEvent<HTMLFormElement>) =>{
 
-		dispatch(startAddNewUser(newUser));
+		e.preventDefault()
+
+
+		dispatch(startUpdateUser(id, {updateAt:formattingDate(Date.now()).toString() ,...formState}))
 
 		navigate('/bookstore-app/control-panel/users')
+
+
 	}
 
-
-	
 	return (
-		<div className="grid-form">
-
-			<h1 className="title">Create a User</h1>
-			<form className="form"  onSubmit={ onCreateNewUser } >
+		<form className="form" onSubmit={ onUpdateUser }  >
 
 				<label >Name</label>
 				<input 
@@ -77,7 +54,7 @@ export const CreateUserView = () => {
 				<input
 					type="text"
 					name="email"
-					value={ email }
+					value={ user?.email }
 					onChange={ onInputChange }	
 				/>
 
@@ -114,8 +91,7 @@ export const CreateUserView = () => {
 					<option value="sales">sales</option>
 				</select>
 				
-				<input className="sub" type="submit" value="Create" />
+				<input className="sub" type="submit" value="Update" />
 			</form>
-		</div>
 	)
 }

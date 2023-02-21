@@ -1,18 +1,13 @@
-import { Link } from "react-router-dom"
-import { setActiveUser } from "../../../store/admin"
-
-import { useAppDispatch, useAppSelector } from "../../hooks/app"
+import { Link } from "react-router-dom";
+import { useCheckAuth } from "../../../auth.ts/useCheckAuth";
+import { useAppDispatch, useAppSelector } from "../../hooks/app";
 
 export const UsersView = () => {
 
-	const { users } = useAppSelector( state => state.admin )
+	const { users } = useAppSelector( state => state.user )
 	const dispatch = useAppDispatch()
 
-	const onActiveUser = () => {
-
-		dispatch(setActiveUser({displayName, lastName, email, usernamem, dependency, rol}))
-
-	}
+	useCheckAuth() //!Unabled when I will have finished the auth implementention
 
 	return (
 		<main>
@@ -60,7 +55,6 @@ export const UsersView = () => {
 									<Link 
 										className="btn-blue"
 										to= {`/bookstore-app/control-panel/users/${user.id}/edit`}
-										onClick = {onActiveUser}
 									>
 										Edit
 									</Link>
