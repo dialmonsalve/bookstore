@@ -1,24 +1,4 @@
 
-/*User interface  */
-
-type Roles = |'admin' |'shop' |'sales' |'user' |'' ; 
-type Status = | 'no-authorized' | 'checking'  | 'authorized';
-type Dependencies = | 'administration' | 'shop' | 'sales' |'Humanity' | '';
-
-/* Admin interface */
-export interface User extends Person {
-	status?: Status;
-}
-
-export interface Auth extends Person {
-	ok:boolean
-}
-
-/* Form login Interface */
-export interface FormLogin {
-	username:string;
-	password:string;
-}
 
 export interface Person {
 	createAt:string;
@@ -36,3 +16,33 @@ export interface Person {
 	updateAt:string | null;
 	username: string ;
 }
+
+type Roles = |'admin' |'shop' |'sales' |'user' |'' ; 
+type Status = | 'no-authorized' | 'checking'  | 'authorized';
+type Dependencies = | 'administration' | 'shop' | 'sales' |'Humanity' | '';
+
+/* Admin interface */
+export interface Admin {
+	isSaving: boolean;
+	messagesSaved: '';
+	active: User | null;
+	users: User[];
+}
+
+/*User interface  */
+export interface User extends Person {
+	status?: Status;
+}
+
+/* Auth Interface */
+export interface Auth extends Person {
+	ok:boolean;
+}
+
+/* Form login Interface */
+export interface FormLogin {
+	username:string;
+	password:string;
+}
+
+

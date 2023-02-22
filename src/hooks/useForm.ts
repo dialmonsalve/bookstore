@@ -20,8 +20,6 @@ export const useForm = <T>(initialForm:T) => {
 	}, [initialForm])
 	
 
-
-
 	return {
 		...formState,
 		formState,

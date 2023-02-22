@@ -52,7 +52,6 @@
 		}
 		&::before {top: -.8rem;}
 		&::after {top: .8rem;}
-
 	}
 
 	&__side {
@@ -96,7 +95,6 @@
 		&:not(:last-child) {
 				margin-bottom: .5rem;
 		}
-
 	}
 
 	&__item::before {
@@ -117,7 +115,6 @@
 	&__item--active::before {
 			transform: scaleY(1);
 			width: 100%;
-
 	}
 
 	&__item:active::before {

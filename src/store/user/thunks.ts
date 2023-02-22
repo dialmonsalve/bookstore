@@ -8,10 +8,8 @@ export const startLoadingUsers = (): ThunkAction<void, RootState, unknown, AnyAc
 	return async (dispatch) => {
 
 		try {
-
 			const resp = await fetch(`${import.meta.env.VITE_API_URL}`);
 			const users:User[] = await resp.json()
-
 			const noAdmin = users.filter(user => user.id !== "1")
 
 			dispatch(setUsers(noAdmin))
@@ -51,8 +49,7 @@ export const getUserById = ( id:string ): ThunkAction<void, RootState, unknown, 
 	return async dispatch =>{
 
 		const resp = await  fetch(`${import.meta.env.VITE_API_URL}`);
-		const users:Auth[] = await resp.json()
-	
+		const users:Auth[] = await resp.json()	
 		const findUser = users.find(user => user.id === id)
 
 		if(typeof findUser === 'undefined') return
@@ -83,7 +80,6 @@ export const startUpdateUser = (id:string, user:User): ThunkAction<void, RootSta
 		dispatch(setSaving)
 
 		try {
-
 			const resp = await  fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
 				method: 'PUT', 
 				body: JSON.stringify(user),
@@ -102,11 +98,10 @@ export const startUpdateUser = (id:string, user:User): ThunkAction<void, RootSta
 }
 
 export const startDeletingUser =(id:string): ThunkAction<void, RootState, unknown, AnyAction> =>{
-	
+
 	return async dispatch => {
 
 		try {
-
 			const resp = await  fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
 				method: 'DELETE'
 			});

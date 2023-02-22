@@ -1,10 +1,8 @@
-import { isRouteErrorResponse, Link, useRouteError } from 'react-router-dom'
+import { isRouteErrorResponse, Link, useRouteError } from 'react-router-dom';
 
 export const NotFound = () => {
 
 	const error = useRouteError();
-
-	console.log(error);
 
 	if (isRouteErrorResponse(error)) {
     if (error.status === 401) {
@@ -35,6 +33,6 @@ export const NotFound = () => {
       </p>
     </div>;
   } else {
-    return <></>;
+    return <h1>Oops! Unexpected Error</h1>;
   }
 }

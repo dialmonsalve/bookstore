@@ -1,7 +1,7 @@
 .grid-form {
-	background-color:  $color-primary-light;
+	background-color: $color-primary-light;
 	border-radius: 10px;
-	box-shadow: .25rem .25rem 2rem rgba($color-black, 0.5) ;
+	box-shadow: .25rem .25rem 2rem rgba($color-black, 0.5);
 	display: flex;
 	flex-direction: column;
 	margin: 3rem auto;
@@ -26,24 +26,25 @@
 	align-items: center;
 	justify-content: center;
 
-	& > label {
+	&>label {
 		text-transform: uppercase;
 		font-weight: 600;
 		color: $color-primary-dark;
 		margin-top: 2rem;
 	}
 
-	& > input[type="submit"] {
+	&>input[type="submit"] {
 		width: 100%;
 		grid-column: 1 / -1;
-		background-color: $color-blue;		
+		background-color: $color-blue;
 
 		&:hover {
-			background-color: rgb(  $color-blue, 1);
+			background-color: rgb($color-blue, 1);
 		}
 	}
-	& > input[type="text"],
-	& > input[type="password"] {
+
+	&>input[type="text"],
+	&>input[type="password"] {
 		border-bottom: var(--line);
 		width: 80%;
 		border-bottom: 1px solid $color-white;
@@ -51,9 +52,7 @@
 
 		&:focus {
 			width: 100%;
-			color:  $color-white;
+			color: $color-white;
 		}
-
+	}
 }
-}
-

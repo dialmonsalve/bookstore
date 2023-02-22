@@ -1,14 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "../../users/interfaces";
+import { Admin, User } from "../../users/interfaces";
 
-export interface Admin {
-	isSaving: boolean,
-	messagesSaved: '',
-	active: User | null
-	users: User[]
-}
-
-const initialState: Admin = {
+const initialState:Admin = {
 	isSaving: false,
 	messagesSaved: '',
 	users: [],
@@ -42,7 +35,7 @@ export const userSlice = createSlice({
 
 		},
 
-		setSaving: (state: Admin) => {
+		setSaving: (state:Admin) => {
 
 		},
 

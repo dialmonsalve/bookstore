@@ -1,11 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom';
 
-import { Layout } from '../users/layout/Layout'
-import { LoginPage } from '../users/pages/LoginPage'
-import { ControlPanelPage, HomePanelPage } from '../users/pages'
-import { routeAdmin } from '../users/routes/RouteAdmin'
-import { NotFound } from '../not-found/NotFound'
-
+import { AppBookstore, } from '../users/pages';
+import { routeAdmin } from '../users/routes/RouteAdmin';
+import { NotFound } from '../not-found/NotFound';
+import { ControlPanelPage, HomePanelPage } from '../users/views/users';
 
 export const router = createBrowserRouter([
 
@@ -13,17 +11,16 @@ export const router = createBrowserRouter([
 	{
 		path: "/",
 		errorElement: <NotFound />
-
 	},
 
 	//!PRIVATE ROUTS
 	{
 		path: '/bookstore-app',
-		element: <Layout />,
+		element: <AppBookstore  />,
 		children: [
 			{
 				index: true,
-				element: <HomePanelPage />,
+				element: <HomePanelPage/>,
 			},
 
 			{

@@ -1,10 +1,9 @@
-import { checkingCredentials, login, logout } from './authSlice';
 import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { RootState } from '../store';
-import {  FormLogin } from '../../users/interfaces';
+import { FormLogin } from '../../users/interfaces';
 import { getUserByUsernameAndPassword } from '../../data/provider';
-
+import { checkingCredentials, login, logout } from './authSlice';
 
 export const startLogin = ({username, password}: FormLogin):ThunkAction<void, RootState, unknown, AnyAction> => {
 

@@ -56,7 +56,6 @@ export const authSlice = createSlice({
 				state.rol= '';
 				state.updateAt= null;
 				state.username= '';
-
 			},
 			checkingCredentials: ( state:User )=>{
 				state.status = 'checking';				

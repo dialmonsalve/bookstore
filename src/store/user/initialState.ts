@@ -8,7 +8,7 @@ export const initialState: User = {
 	email: '',
 	username: '',
 	password: '',
-	status: 'checking',
+	status: 'no-authorized',
 	isAdmin: false,
 	rol: '',
 	isNew: true,

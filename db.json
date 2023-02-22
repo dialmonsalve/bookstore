@@ -11,19 +11,19 @@
       "createAt": ""
     },
     {
-      "updateAt": "21 de febrero de 2023",
-      "displayName": "Alejandros",
-      "lastName": "Doed",
       "id": "2",
+      "createAt": "",
+      "dependency": "administration",
+      "displayName": "Alejandros",
       "email": "correo3@correo.com",
-      "username": "aestrada",
-      "dependency": "sales",
-      "password": "1234567",
       "isAdmin": false,
-      "rol": "sales",
       "isNew": false,
+      "lastName": "Doed",
+      "password": "1234567",
       "photoUrl": "",
-      "createAt": ""
+      "rol": "user",
+      "updateAt": "21 de febrero de 2023",
+      "username": "aestrada"
     },
     {
       "id": "3",
