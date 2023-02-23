@@ -10,7 +10,7 @@ export const NotFound = () => {
     }
     else if (error.status === 404) {
       // ...
-    }
+    };
 
 		return (
       <div id="error-page">

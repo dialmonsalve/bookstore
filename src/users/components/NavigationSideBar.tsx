@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 export const NavigationSideBar = () => {
 
-	const { pathname } = useLocation()
+	const { pathname } = useLocation();
 
 	return (
 		<nav className="sidebar__nav">

@@ -17,6 +17,7 @@ export const OptionsControlPanel = ({
 		title,
 		to
 	}:Props) => {
+
 	return (
 		<article className="card-menu">
 			<Link className="card-menu__link" to={ to } >

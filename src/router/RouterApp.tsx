@@ -16,11 +16,11 @@ export const router = createBrowserRouter([
 	//!PRIVATE ROUTS
 	{
 		path: '/bookstore-app',
-		element: <AppBookstore  />,
+		element: <AppBookstore />,
 		children: [
 			{
 				index: true,
-				element: <HomePanelPage/>,
+				element: <HomePanelPage />,
 			},
 
 			{
@@ -42,5 +42,5 @@ export const router = createBrowserRouter([
 			}
 		]
 	}
-])
+]);
 

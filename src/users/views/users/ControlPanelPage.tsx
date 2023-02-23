@@ -1,4 +1,4 @@
-import { OptionsControlPanel } from "../../components/OptionsControlPanel"
+import { OptionsControlPanel } from '../../components/OptionsControlPanel'
 
 export const ControlPanelPage = () => {
 

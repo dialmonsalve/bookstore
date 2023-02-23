@@ -1,16 +1,16 @@
-import { initialState, startAddNewUser } from "../../../store/user";
+import { useNavigate } from 'react-router-dom';
 
-import { useForm } from "../../../hooks/useForm";
-import { FormNewEditUser } from "../../components/FormNewEditUser";
-import { User } from "../../interfaces";
-import { formattingDate, generateId } from "../../../helpers";
-import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/app";
+import { User } from '../../interfaces';
+import { useForm } from '../../../hooks/useForm';
+import { useAppDispatch } from '../../hooks/app';
+import { initialState, startAddNewUser } from '../../../store/user';
+import { FormCreateEditUser } from '../../components/FormCreateEditUser';
+import { formattingDate, generateId } from '../../../helpers';
 
 export const CreateUserView = () => {
 
-	const dispatch = useAppDispatch()
-	const navigate = useNavigate()
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 
 	const {
 		displayName,
@@ -21,13 +21,11 @@ export const CreateUserView = () => {
 		rol,
 		onInputChange
 	} = useForm(initialState);
-	
 
-	const onCreateNewUser = (e:React.FormEvent<HTMLFormElement>) => {
-
+	const onCreateNewUser = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		const newUser:User = {
+		const newUser: User = {
 			createAt: formattingDate(Date.now()),
 			dependency,
 			displayName,
@@ -41,79 +39,25 @@ export const CreateUserView = () => {
 			rol,
 			updateAt: null,
 			username,
-		}		
-
+		};
 		dispatch(startAddNewUser(newUser));
 
-		navigate('/bookstore-app/control-panel/users')
-	}
+		navigate('/bookstore-app/control-panel/users');
+	};
 
 	return (
 
-		<div className="grid-form">
-			<h1 className="title">{ 'Create a User'}</h1>
-			<form className="form" onSubmit={ onCreateNewUser }  >
-
-				<label >Name</label>
-				<input
-					type="text"
-					name="displayName"
-					value={displayName}
-					onChange={onInputChange}
-				/>
-
-				<label>LastName</label>
-				<input
-					type="text"
-					name="lastName"
-					value={lastName}
-					onChange={onInputChange}
-				/>
-
-				<label>email</label>
-				<input
-					type="text"
-					name="email"
-					value={email}
-					onChange={onInputChange}
-				/>
-
-				<label>username</label>
-				<input type="text"
-					name="username"
-					value={username}
-					onChange={onInputChange}
-				/>
-
-				<select
-					className="select"
-					name="dependency"
-					value={dependency}
-					onChange={onInputChange}
-
-				>
-					<option value="">dependency</option>
-					<option value="administration">administration</option>
-					<option value="shop">shop</option>
-					<option value="sales">sales</option>
-					<option value="humanity">Humanity</option>
-				</select>
-
-				<select
-					className="select"
-					name="rol"
-					value={rol}
-					onChange={onInputChange}
-				>
-					<option value="">rol</option>
-					<option value="user">user</option>
-					<option value="shop">shop</option>
-					<option value="sales">sales</option>
-				</select>
-
-				<input className="sub" type="submit" value={'Create'} />
-			</form>
-		</div>
-
+		<FormCreateEditUser
+			mode='create'
+			onSubmit={onCreateNewUser}
+			onInputChange={onInputChange}
+			displayName={displayName}
+			lastName={lastName}
+			email={email}
+			username={username}
+			dependency={dependency}
+			rol={rol}
+			isEditable={false}
+		/>
 	)
 }

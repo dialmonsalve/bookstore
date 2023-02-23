@@ -1,24 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import React from 'react'
+export const useForm = <T>( initialForm: T ) => {
 
-export const useForm = <T>(initialForm:T) => {
+	const [formState, setFormState] = useState<T>( initialForm );
 
-	const [formState, setFormState] = useState<T>(initialForm);
-
-	const onInputChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+	const onInputChange = ( e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement> ) => {
 		const { name, value } = e.target;
 
-		setFormState( {
+		setFormState({
 			...formState,
-			[name]:value
-		})
+			[name]: value
+		});
 	};
 
 	useEffect(() => {
-		setFormState(initialForm);	
-	}, [initialForm])
-	
+		setFormState( initialForm );
+	}, [ initialForm ]);
+
 
 	return {
 		...formState,
@@ -26,5 +24,5 @@ export const useForm = <T>(initialForm:T) => {
 
 		onInputChange
 
-	}
-}
+	};
+};

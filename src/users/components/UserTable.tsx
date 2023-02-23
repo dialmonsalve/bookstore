@@ -1,5 +1,6 @@
 
 import { Link, redirect } from 'react-router-dom';
+
 import { setClearUser, startDeletingUser } from '../../store/user';
 import { useAppDispatch } from '../hooks/app';
 import { User } from '../interfaces';
@@ -26,6 +27,7 @@ export const UserTable = ({ user }: Props) => {
 	return (
 		<>
 			<td>{user.id}</td>
+			<td>{user.username}</td>
 			<td>{user.displayName}</td>
 			<td>{user.lastName}</td>
 			<td>{user.dependency}</td>

@@ -5,15 +5,15 @@ import { userSlice } from './user';
 
 export const store = configureStore({
 
-	reducer:{
-		auth:authSlice.reducer,
-		user:userSlice.reducer
+	reducer: {
+		auth: authSlice.reducer,
+		user: userSlice.reducer
 	},
 });
 
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 
 // Inferred type: {auth: authSlice.reducer, }
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;

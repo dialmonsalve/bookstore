@@ -6,13 +6,13 @@ export const IsAdmin = () => {
 
 	// const { isAdmin } = useAppSelector(state => state.auth)
 
-	const isAdmin  = true;
+	const isAdmin = true;
 
 	return (
 
 		isAdmin ?
-			<UsersView />	
-			: 
+			<UsersView />
+			:
 			<NotPermission />
 
 	)

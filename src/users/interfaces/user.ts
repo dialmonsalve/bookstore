@@ -15,7 +15,7 @@ export interface Person {
 	rol: Roles;
 	updateAt:string | null;
 	username: string ;
-}
+};
 
 type Roles = |'admin' |'shop' |'sales' |'user' |'' ; 
 type Status = | 'no-authorized' | 'checking'  | 'authorized';
@@ -27,22 +27,22 @@ export interface Admin {
 	messagesSaved: '';
 	active: User | null;
 	users: User[];
-}
+};
 
 /*User interface  */
 export interface User extends Person {
 	status?: Status;
-}
+};
 
 /* Auth Interface */
 export interface Auth extends Person {
 	ok:boolean;
-}
+};
 
 /* Form login Interface */
 export interface FormLogin {
 	username:string;
 	password:string;
-}
+};
 
 
